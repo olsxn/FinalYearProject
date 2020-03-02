@@ -1,13 +1,15 @@
 <?php
 include 'db_connection.php';
 $conn = OpenCon();
-
 //check connection
 if ( $conn->connect_error ) {
   die( "Connection failed. Reason: " . $conn->connect_error );
 }
 
 //queries
+// $test ="SELECT choice_text FROM Question_choices WHERE question_id = '1'";
+// $testResult = $conn->query($test);
+
 $sql = "SELECT question FROM Question WHERE question_id = '1'";
 $result = $conn->query( $sql );
 
@@ -45,19 +47,25 @@ CloseCon( $conn );
       <div>
         <input type= "radio" name="question1_answers" id="question1_answers_A" value="A"/>
         <label for="question1_answers_A">
-          <?php while($row = $result2->fetch_assoc()) {echo $row["choice_text"];}?>
+          <?php while($row = $result2->fetch_assoc()) {echo $row["choice_text"];}
+                $answer1 = $row;
+          ?>
         </label>
       </div>
       <div>
         <input type= "radio" name="question1_answers" id="question1_answers_B" value="B"/>
         <label for="question1_answers_A">
-          <?php while($row = $result3->fetch_assoc()) {echo $row["choice_text"];}?>
+          <?php while($row = $result3->fetch_assoc()) {echo $row["choice_text"];}
+                $answer2 = $row
+          ?>
         </label>
       </div>
       <div>
         <input type= "radio" name="question1_answers" id="question1_answers_C" value="C"/>
         <label for="question1_answers_A">
-          <?php while($row = $result4->fetch_assoc()) {echo $row["choice_text"];}?>
+          <?php while($row = $result4->fetch_assoc()) {echo $row["choice_text"];}
+                $answer3 = $row
+          ?>
         </label>
       </div>
     </li>

@@ -4,13 +4,15 @@ $conn = OpenCon();
 
 //check connection
 if ($conn->connect_error) {die("Connection failed. Reason: " . $conn->connect_error);}
-
+else {
+	echo("Connection successful");
+}
 //query
 $sql = "SELECT * FROM test";
 $result = $conn->query($sql);
 CloseCon($conn);
 ?>
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head> 
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -40,6 +42,6 @@ CloseCon($conn);
 		?>
 	</table>
 </body>	
-</html>
+</html> -->
 
 

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	width: 100%;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	background-color: grey;
+	font-weight: 400;
+}
+
+header {
+	background: #55d6aa;
+}
+
+/* creates a pseudo-element that is the last child of the selected element - header */
+/* add fixes header problem */
+header::after {
+
+	content: '';
+	display: table;
+	clear: both;
+}
+
+nav { 
+	float: right;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-weight: 200;
+}
+
+/* makes cleaner nav bar, takes dots away from list */
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* horizontal not vertical listing */
+nav li {
+	display: inline-block;
+	margin-left: 50px;
+	padding-top: 20px;
+
+	position: relative;
+}
+
+nav a {
+	color: #444444;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+/* in the link, before the text */
+/* blocks to be used for hover over nav selection */
+/* starts off at 0% then when hovered over is 100% */
+nav a::before {
+	content: '';
+	display: block;
+	height: 5px;
+	width: 0%;
+	top: 0;
+	background-color: #444444;
+	/* pos here is relative to nav li */
+	position: absolute;
+	transition: all ease-in-out 200ms;
+}
+
+nav a.hover {
+	color: #444444;
+}
+
+/* creates bar above selection */
+nav a:hover::before {
+	width: 100%;
+}
+
+/* -------------------------------------------------- */
+
+.headerImage {
+	size: 10%;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.logo {
+	float: left;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}

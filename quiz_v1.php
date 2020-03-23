@@ -56,6 +56,7 @@ CloseCon( $conn );
 </head>
 
 <body>
+
 <form action="quiz_dest.php" method="post" id="quiz">
       <!-- display question as heading -->
       <?php

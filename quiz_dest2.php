@@ -11,6 +11,7 @@ session_start();
 
 // take the ID from answer to last question, then check if it is correct answer
 // if it is the right answer, increment totalCorrect by 1
+
 $answerQuestion2 = $_POST[ "question2_answers" ];
 $checkIfRight = "SELECT is_right_choice FROM Question_choices WHERE choice_id = $answerQuestion2";
 $checkIfRightResult = $conn->query($checkIfRight);
@@ -23,7 +24,10 @@ while ($check = $checkIfRightResult->fetch_assoc()) {
 
 echo $_SESSION['totalCorrect'];
 
+// ------------------------------------------------
+
 //queries
+
 // ------------------------------------------------
 
 // variables to hold all the choice_IDs

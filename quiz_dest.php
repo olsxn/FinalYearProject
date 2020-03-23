@@ -23,7 +23,10 @@ while ($check = $checkIfRightResult->fetch_assoc()) {
 }
 echo $_SESSION['totalCorrect'];
 
+// ------------------------------------------------
+
 //queries
+
 // ------------------------------------------------
 
 // variables to hold all the choice_IDs

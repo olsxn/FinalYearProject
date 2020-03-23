@@ -9,6 +9,8 @@ if ( $conn->connect_error ) {
 
 session_start(); 
 
+// ------------------------------------------------
+
 // take the ID from answer to last question, then check if it is correct answer
 // if it is the right answer, increment totalCorrect by 1
 $answerQuestion3 = $_POST[ "question3_answers" ];

@@ -3,19 +3,20 @@
 
 body {
 	width: 100%;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-family: 'Exo', sans-serif;
 	background-color: grey;
 	font-weight: 400;
 }
 
 header {
-	background: #55d6aa;
+	background: #b9b9b9;
+	font-family: 'Exo', sans-serif;
+	text-transform: uppercase;
 }
 
 /* creates a pseudo-element that is the last child of the selected element - header */
 /* add fixes header problem */
 header::after {
-
 	content: '';
 	display: table;
 	clear: both;
@@ -23,8 +24,7 @@ header::after {
 
 nav { 
 	float: right;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	font-weight: 200;
+	font-weight: 500;
 }
 
 /* makes cleaner nav bar, takes dots away from list */
@@ -37,16 +37,14 @@ nav ul {
 /* horizontal not vertical listing */
 nav li {
 	display: inline-block;
-	margin-left: 50px;
-	padding-top: 20px;
-
+	margin-left: 20px;
+	padding-top: 10px;
 	position: relative;
 }
 
 nav a {
 	color: #444444;
 	text-decoration: none;
-	text-transform: uppercase;
 	font-size: 20px;
 }
 
@@ -76,18 +74,97 @@ nav a:hover::before {
 
 /* -------------------------------------------------- */
 
-.headerImage {
-	size: 10%;
-	padding: 0;
-	margin: 0;
-	float: left;
-}
-
 .logo {
 	float: left;
 }
 
 .container {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
+
+.navP {
+	float: left;
+	margin: 0 auto;
+	padding-top: 10px;
+	font-size: 20px;
+}
+
+.column {
+	padding: 0;
+	float: left;
+	width: 50%;
+	background: #4a4a4a;
+  }
+  
+  /* clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+  .colP {
+	  font-size: 15pt;
+  }
+
+  .topRow {
+	  width: 100%;
+	  text-align: center;
+  }
+
+  .headerImage {
+	  width: 100%;
+	  height: 250px;
+  }
+
+  .btn {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  background-color: #e1b12c;
+	  font-size: 20px;
+	  color:white;
+	  padding: 10px 30px;
+	  cursor: pointer;
+  }
+
+  .close {
+	font-size: 20px;
+	color:white;
+	padding: 10px 30px;
+	cursor: pointer;
+	background: #e1b12c;
+	display: inline-block;
+	border-radius: 4px;
+  }
+
+  #box {
+	  width: 300px;
+	  overflow: hidden;
+	  background: #487eb0;
+	  box-shadow: 0 0 20px black;
+	  border-radius: 8px;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 9999;
+	  padding: 10px;
+	  text-align: center;
+	  display:none;
+  }
+
+  #box span {
+	  color: #7f8fa6;
+	  font-size: 40px;
+	  margin: 20px 0;
+  }
+
+  #box h1{
+	  color: #333;
+	  font-size: 200px;
+  }
+
+  

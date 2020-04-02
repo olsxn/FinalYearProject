@@ -1,10 +1,41 @@
 <?php
 include 'db_connection.php';
 $conn = OpenCon();
+
+//queries
+// ------------------------------------------------
+
+// variables to hold all the choice_IDs
+$choice_id1 = "SELECT choice_id FROM Question_choices WHERE choice_id = '1'";
+$choice_idResult1 = $conn->query($choice_id1);
+
+$choice_id2 = "SELECT choice_id FROM Question_choices WHERE choice_id = '2'";
+$choice_idResult2 = $conn->query($choice_id2);
+
+$choice_id3 = "SELECT choice_id FROM Question_choices WHERE choice_id = '3'";
+$choice_idResult3 = $conn->query($choice_id3);
+
+// ------------------------------------------------
+
+// variables to hold the text for the choice
+
+$sql = "SELECT question FROM Question WHERE question_id = '1'";
+$result = $conn->query( $sql );
+
+$sql2 = "SELECT choice_text FROM Question_choices WHERE choice_id = '1' AND question_id = '1'";
+$result2 = $conn->query( $sql2 );
+
+$sql3 = "SELECT choice_text FROM Question_choices WHERE choice_id = '2' AND question_id = '1'";
+$result3 = $conn->query( $sql3 );
+
+$sql4 = "SELECT choice_text FROM Question_choices WHERE choice_id = '3' AND question_id = '1'";
+$result4 = $conn->query( $sql4 );
+
+// ------------------------------------------------
+
 CloseCon($conn);
 ?>
 
-<!-------------------------------------------------->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,13 +93,58 @@ CloseCon($conn);
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
-			<h2>Modal Header</h2>
+			<!-- display question as heading -->
+			<?php
+					while ( $row = $result->fetch_assoc() ) {
+						echo "<h3>" . $row[ "question" ] . "</h3>";
+					}
+				?>
 			<button id="close1" class="close">&times;</button>
 			</div>
 			<div class="modal-body">
-			<p>Some text in the Modal Body</p>
-			<p>Some other text...</p>
-			</div>
+			<form action="quiz_dest.php" method="post" id="quiz">
+					<!-- display answers as radio -->
+					<div>
+					<?php
+						while ($id = $choice_idResult1->fetch_assoc()) {
+						echo '<input type= "radio" name="question1_answers" id="question1_answers_A" value= "' . $id["choice_id"] . '"';
+						}
+					?>
+						<label for="question1_answers_A">
+						<?php while($row = $result2->fetch_assoc()) {echo $row["choice_text"];}
+								$answer1 = $row;
+						?>
+						</label>
+					</div>
+
+					<div>
+					<?php
+						while ($id = $choice_idResult2->fetch_assoc()) {
+						echo '<input type= "radio" name="question1_answers" id="question1_answers_B" value= "' . $id["choice_id"] . '"';
+						}
+					?>
+						<label for="question1_answers_A">
+						<?php while($row = $result3->fetch_assoc()) {echo $row["choice_text"];}
+								$answer2 = $row
+						?>
+						</label>
+					</div>
+					
+					<div>
+					<?php
+						while ($id = $choice_idResult3->fetch_assoc()) {
+						echo '<input type= "radio" name="question1_answers" id="question1_answers_C" value= "' . $id["choice_id"] . '"';
+						}
+					?>
+						<label for="question1_answers_A">
+						<?php while($row = $result4->fetch_assoc()) {echo $row["choice_text"];}
+								$answer3 = $row
+						?>
+						</label>
+					</div>
+				<input type="submit" value="Submit answer"/>
+				</form>
+            </div>
 			<div class="modal-footer">
 				<button id="myBtn2">Open Modal 2</button>
 			</div>
@@ -126,7 +202,9 @@ CloseCon($conn);
 
 		// Get the <span> element that closes the modal
 		var close1 = document.getElementById("close1")
-
+		var close2 = document.getElementById("close2")
+		var close3 = document.getElementById("close3")
+		
 		// When the user clicks on the button, open the modal
 		btn.onclick = function() {
 		modal.style.display = "block";
@@ -159,7 +237,7 @@ CloseCon($conn);
 		else if (event.target == modal2) {
 			modal2.style.display = "none";
 		}
-		else if (event.target == modal) {
+		else if (event.target == modal3) {
 			modal3.style.display = "none";
 		}
 		}

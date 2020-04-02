@@ -54,48 +54,101 @@ CloseCon($conn);
     </div>
 
 
-	<!-- Trigger/Open The Modal -->
-	<button id="myBtn">Open Modal</button>
-	<!-- The Modal -->
+	<!-- Trigger/Open The Modals -->
+	<button id="myBtn">Open Modal 1</button>
+
+	<!-- The Modals -->
 	<div id="myModal" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
 			<h2>Modal Header</h2>
-			<span class="close">&times;</span>
+			<button id="close1" class="close">&times;</button>
 			</div>
 			<div class="modal-body">
 			<p>Some text in the Modal Body</p>
 			<p>Some other text...</p>
 			</div>
 			<div class="modal-footer">
-			<button>Click here to go to next modal</button>
+				<button id="myBtn2">Open Modal 2</button>
 			</div>
 		</div>
 	</div>
 
-	
+	<div id="myModal2" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+			<h2>Modal Header</h2>
+			<button id="close2" class="close">&times;</button>
+			</div>
+			<div class="modal-body">
+			<p>Some text in the Modal Body</p>
+			<p>Some other text...</p>
+			</div>
+			<div class="modal-footer">
+				<button id="myBtn3">Open Modal 3</button>
+			</div>
+		</div>
+	</div>
 
-<!-- scripts here -->
-<!-- modal JS -->
+	<div id="myModal3" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+			<h2>Modal Header</h2>
+			<button id="close3" class="close">&times;</button>
+			</div>
+			<div class="modal-body">
+			<p>Some text in the Modal Body</p>
+			<p>Some other text...</p>
+			</div>
+			<div class="modal-footer">
+				<h1>This is the last modal</h1>
+			</div>
+		</div>
+	</div>
+
+
+	// #region [rgba(0, 205, 30, 0.1) ]
+	<!-- scripts here -->
+	<!-- modal1 JS -->
 	<script>
 		// Get the modal
 		var modal = document.getElementById("myModal");
+		var modal2 = document.getElementById("myModal2");
+		var modal3 = document.getElementById("myModal3");
 
 		// Get the button that opens the modal
 		var btn = document.getElementById("myBtn");
+		var btn2 = document.getElementById("myBtn2");
+		var btn3 = document.getElementById("myBtn3");
 
 		// Get the <span> element that closes the modal
-		var span = document.getElementsByClassName("close")[0];
+		var close1 = document.getElementById("close1")
 
 		// When the user clicks on the button, open the modal
 		btn.onclick = function() {
 		modal.style.display = "block";
 		}
+		btn2.onclick = function() {
+			modal.style.display = "none";
+			modal2.style.display = "block";
+		}
+		btn3.onclick = function() {
+			modal2.style.display = "none";
+			modal3.style.display = "block";
+		}
 
 		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
+		close1.onclick = function() {
 		modal.style.display = "none";
+		}
+		close2.onclick = function() {
+		modal2.style.display = "none";
+		}
+		close3.onclick = function() {
+		modal3.style.display = "none";
 		}
 
 		// When the user clicks anywhere outside of the modal, close it
@@ -103,27 +156,19 @@ CloseCon($conn);
 		if (event.target == modal) {
 			modal.style.display = "none";
 		}
+		else if (event.target == modal2) {
+			modal2.style.display = "none";
 		}
-	</script>
-	<!-- close and open box -->
-	<script type="text/javascript">
-			var c = 0;
-			function pop() {
-				if(c==0) {
-					document.getElementById("box").style.display = "block";
-					c = 1;
-				}
-				else {
-					document.getElementById("box").style.display = "none";
-					c = 0;
-				}
-			}
-			
+		else if (event.target == modal) {
+			modal3.style.display = "none";
+		}
+		}
 	</script>
 	<!-- bootstrap 4 scripts -->
 	<script src="jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<!-- icons -->
 	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+	// #endregion
 </body>
 </html>

@@ -118,53 +118,68 @@ nav a:hover::before {
 	  height: 250px;
   }
 
-  .btn {
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  background-color: #e1b12c;
-	  font-size: 20px;
-	  color:white;
-	  padding: 10px 30px;
-	  cursor: pointer;
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
   }
+  
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  top: 500px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation: animateFadeIn 1s;
+}
 
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  /* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  
+  /* The Close Button */
   .close {
-	font-size: 20px;
-	color:white;
-	padding: 10px 30px;
-	cursor: pointer;
-	background: #e1b12c;
-	display: inline-block;
-	border-radius: 4px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
   }
 
-  #box {
-	  width: 300px;
-	  overflow: hidden;
-	  background: #487eb0;
-	  box-shadow: 0 0 20px black;
-	  border-radius: 8px;
-	  position: absolute;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  z-index: 9999;
-	  padding: 10px;
-	  text-align: center;
-	  display:none;
-  }
-
-  #box span {
-	  color: #7f8fa6;
-	  font-size: 40px;
-	  margin: 20px 0;
-  }
-
-  #box h1{
-	  color: #333;
-	  font-size: 200px;
+  /* Add Animation */
+@keyframes animateFadeIn {
+    from {left: -500px; opacity: 0}
+    to {left: 0px; opacity: 1}
   }
 
   

@@ -33,6 +33,7 @@ $result4 = $conn->query( $sql4 );
 
 // ------------------------------------------------
 
+$totalCorrect = 0;
 CloseCon($conn);
 ?>
 
@@ -75,14 +76,36 @@ CloseCon($conn);
 	<p>
 		Curae; dignissim arcu justo ut torquent vitae pellentesque lobortis habitasse! Nullam ac aptent rutrum ac ut etiam. Fringilla taciti lobortis aptent nostra nisl ornare, facilisis cubilia rhoncus penatibus malesuada suscipit. Litora felis mus ipsum, fringilla nostra dui. Ullamcorper donec accumsan ipsum sapien molestie curabitur! A egestas ac interdum consectetur. Hac lacus venenatis posuere porttitor dis fames vitae class.
 	</p>
-	<button type="button" onclick="window.location.href = 'quiz_v1.php';">Click here to take the quiz</button>
-
-	<h1>Pop up box test</h1>
 	
-    <a onclick="pop()" class="btn">Show box</a>
-    <div id="box">
-        <a onclick="pop()" class="close">Close</a>
-    </div>
+	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+		<h1>hello</h1>
+	</div>
+
+	<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+		<div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+		  <div class="my-3 py-3">
+			<h2 class="display-5">Another headline</h2>
+			<p class="lead">And an even wittier subheading.</p>
+		  </div>
+		</div>
+	</div>
+
+	    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+	  </div>
+	  </div>
 
 
 	<!-- Trigger/Open The Modals -->
@@ -102,7 +125,7 @@ CloseCon($conn);
 			<button id="close1" class="close">&times;</button>
 			</div>
 			<div class="modal-body">
-			<form action="quiz_dest.php" method="post" id="quiz">
+			<form action="#" method="post" id="quiz">
 					<!-- display answers as radio -->
 					<div>
 					<?php
@@ -144,6 +167,7 @@ CloseCon($conn);
 					</div>
 				<input type="submit" value="Submit answer"/>
 				</form>
+			
             </div>
 			<div class="modal-footer">
 				<button id="myBtn2">Open Modal 2</button>
@@ -186,62 +210,62 @@ CloseCon($conn);
 	</div>
 
 
-	// #region [rgba(0, 205, 30, 0.1) ]
-	<!-- scripts here -->
-	<!-- modal1 JS -->
-	<script>
-		// Get the modal
-		var modal = document.getElementById("myModal");
-		var modal2 = document.getElementById("myModal2");
-		var modal3 = document.getElementById("myModal3");
+// #region [rgba(0, 205, 30, 0.1) ]
+<!-- scripts here -->
+<!-- modal1 JS -->
+<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+	var modal2 = document.getElementById("myModal2");
+	var modal3 = document.getElementById("myModal3");
 
-		// Get the button that opens the modal
-		var btn = document.getElementById("myBtn");
-		var btn2 = document.getElementById("myBtn2");
-		var btn3 = document.getElementById("myBtn3");
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+	var btn2 = document.getElementById("myBtn2");
+	var btn3 = document.getElementById("myBtn3");
 
-		// Get the <span> element that closes the modal
-		var close1 = document.getElementById("close1")
-		var close2 = document.getElementById("close2")
-		var close3 = document.getElementById("close3")
-		
-		// When the user clicks on the button, open the modal
-		btn.onclick = function() {
-		modal.style.display = "block";
-		}
-		btn2.onclick = function() {
-			modal.style.display = "none";
-			modal2.style.display = "block";
-		}
-		btn3.onclick = function() {
-			modal2.style.display = "none";
-			modal3.style.display = "block";
-		}
+	// Get the <span> element that closes the modal
+	var close1 = document.getElementById("close1")
+	var close2 = document.getElementById("close2")
+	var close3 = document.getElementById("close3")
 
-		// When the user clicks on <span> (x), close the modal
-		close1.onclick = function() {
+	// When the user clicks on the button, open the modal
+	btn.onclick = function() {
+	modal.style.display = "block";
+	}
+	btn2.onclick = function() {
 		modal.style.display = "none";
-		}
-		close2.onclick = function() {
+		modal2.style.display = "block";
+	}
+	btn3.onclick = function() {
 		modal2.style.display = "none";
-		}
-		close3.onclick = function() {
-		modal3.style.display = "none";
-		}
+		modal3.style.display = "block";
+	}
 
-		// When the user clicks anywhere outside of the modal, close it
-		window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-		else if (event.target == modal2) {
-			modal2.style.display = "none";
-		}
-		else if (event.target == modal3) {
-			modal3.style.display = "none";
-		}
-		}
-	</script>
+	// When the user clicks on (x), close the modal
+	close1.onclick = function() {
+	modal.style.display = "none";
+	}
+	close2.onclick = function() {
+	modal2.style.display = "none";
+	}
+	close3.onclick = function() {
+	modal3.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = "none";
+	}
+	else if (event.target == modal2) {
+		modal2.style.display = "none";
+	}
+	else if (event.target == modal3) {
+		modal3.style.display = "none";
+	}
+	}
+</script>
 	<!-- bootstrap 4 scripts -->
 	<script src="jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

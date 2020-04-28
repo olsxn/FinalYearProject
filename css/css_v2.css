@@ -178,8 +178,8 @@ nav a:hover::before {
 
   /* Add Animation */
 @keyframes animateFadeIn {
-    from {left: -500px; opacity: 0}
-    to {left: 0px; opacity: 1}
-  }
+  from {left: 0px; opacity: 0;}
+  to {left: 0px; opacity: 1;}
+}
 
   

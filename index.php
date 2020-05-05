@@ -5,7 +5,7 @@ $conn = OpenCon();
 //queries
 // ------------------------------------------------
 
-// variables to hold all the choice_IDs
+// variables to hold all the choice_IDs for question 1
 $choice_id1 = "SELECT choice_id FROM Question_choices WHERE choice_id = '1'";
 $choice_idResult1 = $conn->query($choice_id1);
 
@@ -17,7 +17,7 @@ $choice_idResult3 = $conn->query($choice_id3);
 
 // ------------------------------------------------
 
-// variables to hold the text for the choice
+// variables to hold the text for the choice for question 1
 
 $sql = "SELECT question FROM Question WHERE question_id = '1'";
 $result = $conn->query( $sql );
@@ -33,10 +33,67 @@ $result4 = $conn->query( $sql4 );
 
 // ------------------------------------------------
 
+// variables to hold all the choice_IDs for question 2
+$choice_id4 = "SELECT choice_id FROM Question_choices WHERE choice_id = '4'";
+$choice_idResult4 = $conn->query($choice_id4);
+
+$choice_id5 = "SELECT choice_id FROM Question_choices WHERE choice_id = '5'";
+$choice_idResult5 = $conn->query($choice_id5);
+
+$choice_id6 = "SELECT choice_id FROM Question_choices WHERE choice_id = '6'";
+$choice_idResult6 = $conn->query($choice_id6);
+
+// ------------------------------------------------
+
+// variables to hold the text for the choice for question 2
+
+$sql5 = "SELECT question FROM Question WHERE question_id = '2'";
+$result5 = $conn->query( $sql5 );
+
+$sql6 = "SELECT choice_text FROM Question_choices WHERE choice_id = '4' AND question_id = '2'";
+$result6 = $conn->query( $sql6 );
+
+$sql7 = "SELECT choice_text FROM Question_choices WHERE choice_id = '5' AND question_id = '2'";
+$result7 = $conn->query( $sql7 );
+
+$sql8 = "SELECT choice_text FROM Question_choices WHERE choice_id = '6' AND question_id = '2'";
+$result8 = $conn->query( $sql8 );
+
+// ------------------------------------------------
+
+// variables to hold all the choice_IDs for question 3
+$choice_id7 = "SELECT choice_id FROM Question_choices WHERE choice_id = '7'";
+$choice_idResult7 = $conn->query($choice_id7);
+
+$choice_id8 = "SELECT choice_id FROM Question_choices WHERE choice_id = '8'";
+$choice_idResult8 = $conn->query($choice_id8);
+
+$choice_id9 = "SELECT choice_id FROM Question_choices WHERE choice_id = '9'";
+$choice_idResult9 = $conn->query($choice_id9);
+
+// ------------------------------------------------
+
+// variables to hold the text for the choice for question 3
+ 
+$sql9 = "SELECT question FROM Question WHERE question_id = '3'";
+$result9 = $conn->query( $sql9 );
+
+$sql10 = "SELECT choice_text FROM Question_choices WHERE choice_id = '7' AND question_id = '3'";
+$result10 = $conn->query( $sql10 );
+
+$sql11 = "SELECT choice_text FROM Question_choices WHERE choice_id = '8' AND question_id = '3'";
+$result11 = $conn->query( $sql11 );
+
+$sql12 = "SELECT choice_text FROM Question_choices WHERE choice_id = '9' AND question_id = '3'";
+$result12 = $conn->query( $sql12 );
+
+// ------------------------------------------------
+
 $totalCorrect = 0;
+$test = 1;
+
 CloseCon($conn);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,9 +130,6 @@ CloseCon($conn);
 	</header>
 	
 <body>
-	<p>
-		Curae; dignissim arcu justo ut torquent vitae pellentesque lobortis habitasse! Nullam ac aptent rutrum ac ut etiam. Fringilla taciti lobortis aptent nostra nisl ornare, facilisis cubilia rhoncus penatibus malesuada suscipit. Litora felis mus ipsum, fringilla nostra dui. Ullamcorper donec accumsan ipsum sapien molestie curabitur! A egestas ac interdum consectetur. Hac lacus venenatis posuere porttitor dis fames vitae class.
-	</p>
 	
 	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 		<h1>hello</h1>
@@ -111,6 +165,8 @@ CloseCon($conn);
 	<!-- Trigger/Open The Modals -->
 	<button id="myBtn">Open Modal 1</button>
 
+
+	// #region [rgba(197, 94, 94, 0.3) ]
 	<!-- The Modals -->
 	<div id="myModal" class="modal">
 		<!-- Modal content -->
@@ -175,44 +231,136 @@ CloseCon($conn);
 		</div>
 	</div>
 
+	// end region
+
+	// #region [rgba(197, 149, 94, 0.3) ]				
 	<div id="myModal2" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
-			<h2>Modal Header</h2>
+			<!-- display question as heading -->
+			<?php
+      while ( $row = $result5->fetch_assoc() ) {
+        echo "<h3>" . $row[ "question" ] . "</h3>";
+	  }
+	  ?>
+	  
+	  <h3 id="tally"></h3>
 			<button id="close2" class="close">&times;</button>
 			</div>
+
 			<div class="modal-body">
-			<p>Some text in the Modal Body</p>
-			<p>Some other text...</p>
+			 <!-- display answers as radio -->
+			 <div>
+      <?php
+        while ($id = $choice_idResult4->fetch_assoc()) {
+          echo '<input type= "radio" name="question2_answers" id="question2_answers_A" value= "' . $id["choice_id"] . '"';
+        }
+      ?>
+        <label for="question2_answers_A">
+          <?php while($row = $result6->fetch_assoc()) {echo $row["choice_text"];}
+                $answer1 = $row;
+          ?>
+        </label>
+      </div>
+
+      <div>
+      <?php
+        while ($id = $choice_idResult5->fetch_assoc()) {
+          echo '<input type= "radio" name="question2_answers" id="question2_answers_B" value= "' . $id["choice_id"] . '"';
+        }
+      ?>
+        <label for="question2_answers_B">
+          <?php while($row = $result7->fetch_assoc()) {echo $row["choice_text"];}
+                $answer2 = $row
+          ?>
+        </label>
+      </div>
+      
+      <div>
+      <?php
+        while ($id = $choice_idResult6->fetch_assoc()) {
+          echo '<input type= "radio" name="question2_answers" id="question2_answers_C" value= "' . $id["choice_id"] . '"';
+        }
+      ?>
+        <label for="question2_answers_C">
+          <?php while($row = $result8->fetch_assoc()) {echo $row["choice_text"];}
+                $answer3 = $row
+          ?>
+        </label>
+      </div>
 			</div>
 			<div class="modal-footer">
 				<button id="myBtn3">Open Modal 3</button>
 			</div>
 		</div>
 	</div>
+	// end region
 
+// #region [rgba(94, 137, 197, 0.4) ]
 	<div id="myModal3" class="modal">
 		<!-- Modal content -->
 		<div class="modal-content">
 			<div class="modal-header">
-			<h2>Modal Header</h2>
+	<!-- display question as heading -->
+	<?php
+      while ( $row = $result9->fetch_assoc() ) {
+        echo "<h3>" . $row[ "question" ] . "</h3>";
+      }
+      ?>
 			<button id="close3" class="close">&times;</button>
 			</div>
 			<div class="modal-body">
-			<p>Some text in the Modal Body</p>
-			<p>Some other text...</p>
-			</div>
+			<!-- display answers as radio -->
+			<div>
+      <?php
+        while ($id = $choice_idResult7->fetch_assoc()) {
+          echo '<input type= "radio" name="question3_answers" id="question3_answers_A" value= "' . $id["choice_id"] . '"';
+        }
+      ?>
+        <label for="question2_answers_A">
+          <?php while($row = $result10->fetch_assoc()) {echo $row["choice_text"];}
+                $answer1 = $row;
+          ?>
+        </label>
+      </div>
+
+      <div>
+      <?php
+        while ($id = $choice_idResult8->fetch_assoc()) {
+            echo '<input type= "radio" name="question3_answers" id="question3_answers_B" value= "' . $id["choice_id"] . '"';
+        }
+      ?>
+        <label for="question3_answers_B">
+          <?php while($row = $result11->fetch_assoc()) {echo $row["choice_text"];}
+                $answer2 = $row
+          ?>
+        </label>
+      </div>
+      
+      <div>
+      <?php
+        while ($id = $choice_idResult9->fetch_assoc()) {
+            echo '<input type= "radio" name="question3_answers" id="question3_answers_C" value= "' . $id["choice_id"] . '"';
+        }
+      ?>
+        <label for="question3_answers_C">
+          <?php while($row = $result12->fetch_assoc()) {echo $row["choice_text"];}
+                $answer3 = $row
+          ?>
+        </label>
+      </div>
+	  </div>
 			<div class="modal-footer">
 				<h1>This is the last modal</h1>
 			</div>
 		</div>
 	</div>
-
+// end region
 
 // #region [rgba(0, 205, 30, 0.1) ]
 <!-- scripts here -->
-<!-- modal1 JS -->
+<!-- modal JS -->
 <script>
 	// Get the modal
 	var modal = document.getElementById("myModal");
@@ -234,6 +382,7 @@ CloseCon($conn);
 	modal.style.display = "block";
 	}
 	btn2.onclick = function() {
+		checkRadio('question1_answers_B');
 		modal.style.display = "none";
 		modal2.style.display = "block";
 	}
@@ -266,6 +415,26 @@ CloseCon($conn);
 	}
 	}
 </script>
+
+<!-- scripts to check if the correct radio button has been checked and store tally -->
+<script>
+	var tally = 0;
+
+function checkRadio(id) {
+	if (document.getElementById(id).checked) {
+		addTally();
+	}
+}
+
+function addTally() {
+	tally++;
+}
+
+function showTally() {
+	document.getElementById("tally").innerHTML = tally;
+}
+</script>
+
 	<!-- bootstrap 4 scripts -->
 	<script src="jquery-3.4.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

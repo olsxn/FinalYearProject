@@ -111,6 +111,13 @@ CloseCon($conn);
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 
+	<script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+
+	<!-- bootstrap 4 scripts -->
+	<script src="jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
 	<title>Education on Substance Abuse</title>
 </head>
 
@@ -244,8 +251,6 @@ CloseCon($conn);
         echo "<h3>" . $row[ "question" ] . "</h3>";
 	  }
 	  ?>
-	  
-	  <h3 id="tally"></h3>
 			<button id="close2" class="close">&times;</button>
 			</div>
 
@@ -289,6 +294,7 @@ CloseCon($conn);
           ?>
         </label>
       </div>
+	  <p id="tally"></p>
 			</div>
 			<div class="modal-footer">
 				<button id="myBtn3">Open Modal 3</button>
@@ -382,7 +388,7 @@ CloseCon($conn);
 	modal.style.display = "block";
 	}
 	btn2.onclick = function() {
-		checkRadio('question1_answers_B');
+		checkConsole();
 		modal.style.display = "none";
 		modal2.style.display = "block";
 	}
@@ -418,28 +424,33 @@ CloseCon($conn);
 
 <!-- scripts to check if the correct radio button has been checked and store tally -->
 <script>
-	var tally = 0;
+	var tally = sessionStorage.getItem('tally') || 0
 
+	function checkConsole() {
+		var myAnswers1 = document.querySelector("question1_answers");
+		for (var i = 0; i < myAnswers1.length; i++) {
+		console.log("Question 1, radio index " + i + " is " + myAnswers1[i].checked + ".");
+		}
+	}
+	
 function checkRadio(id) {
 	if (document.getElementById(id).checked) {
 		addTally();
 	}
 }
-
+	
 function addTally() {
-	tally++;
+    tally++;
+    sessionStorage.setItem('tally', tally)
 }
+
 
 function showTally() {
 	document.getElementById("tally").innerHTML = tally;
 }
 </script>
 
-	<!-- bootstrap 4 scripts -->
-	<script src="jquery-3.4.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<!-- icons -->
-	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+	
 	// #endregion
 </body>
 </html>

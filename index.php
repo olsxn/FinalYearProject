@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php';
+include 'php/db_connection.php';
 $conn = OpenCon();
 
 //queries
@@ -135,23 +135,22 @@ CloseCon($conn);
         <span class="navbar-toggler-icon"></span>
       </button>
 
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html">Home</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/hbo13_website/index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about.html">About me</a>
+            <a class="nav-link" href="/hbo13_website/html/about.html">About me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact.html">Contact</a>
+            <a class="nav-link" href="/hbo13_website/html/contact.html">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/sources.html">Sources</a>
+            <a class="nav-link" href="/hbo13_website/html/sources.html">Sources</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/portfolio.html">Portfolio</a>
+            <a class="nav-link" href="/hbo13_website/html/portfolio.html">Portfolio</a>
           </li>
         </ul>
       </div>
@@ -278,7 +277,7 @@ CloseCon($conn);
         <div class="col-sm-4 p-2 text-white">
           <p class="pLeftLarge">Use the links below to navigate to the pages that talk about each drug, or follow the links at the top of the page.</p>
           <ul class="ulLarger">
-            <li><a href="/marijuana.html">Marijuana</a></li>
+            <li><a href="/hbo13_website/html/marijuana.html">Marijuana</a></li>
           </ul>
         </div>
       </div>

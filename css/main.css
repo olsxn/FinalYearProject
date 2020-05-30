@@ -1,0 +1,226 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+  width: 100%;
+  font-family: "Exo", sans-serif;
+  background-color: grey;
+  font-weight: 400;
+}
+
+header {
+  background: #343a40;
+  font-family: "Exo", sans-serif;
+  text-transform: uppercase;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* creates a pseudo-element that is the last child of the selected element - header */
+/* add fixes header problem */
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav {
+  float: right;
+  font-weight: 500;
+}
+
+/* makes cleaner nav bar, takes dots away from list */
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* horizontal not vertical listing */
+nav li {
+  display: inline-block;
+  margin-left: 20px;
+  padding-top: 10px;
+  position: relative;
+}
+
+nav a {
+  color: #444444;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* in the link, before the text */
+/* blocks to be used for hover over nav selection */
+/* starts off at 0% then when hovered over is 100% */
+nav a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 0%;
+  top: 0;
+  background-color: #b9b9b9;
+  /* pos here is relative to nav li */
+  position: absolute;
+  transition: all ease-in-out 200ms;
+}
+
+nav a.hover {
+  color: "#444444";
+}
+
+/* creates bar above selection */
+nav a:hover::before {
+  width: 100%;
+}
+
+/* -------------------------------------------------- */
+
+/* for text in the middle of image banners */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* to stop overflow causing horizontal scrolling on page */
+.container-fluid {
+  overflow: hidden;
+}
+
+.logo {
+  float: left;
+}
+
+.pLeftLarge {
+  font-size: x-large;
+  text-align: left;
+}
+
+.ulLeftLarge {
+  font-size: large;
+  text-align: left;
+}
+
+.ulLarger {
+  font-size: x-large;
+  text-align: left;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navP {
+  float: left;
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.column {
+  padding: 0;
+  float: left;
+  width: 50%;
+  background: #4a4a4a;
+}
+
+/* clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.colP {
+  font-size: 15pt;
+}
+
+.topRow {
+  width: 100%;
+  text-align: center;
+}
+
+.headerImage {
+  width: 100%;
+  height: 250px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  top: 500px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animateFadeIn;
+  animation-duration: 1s;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animateFadeIn {
+  from {
+    left: 0px;
+    opacity: 0;
+  }
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}

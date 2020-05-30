@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+
+    <!-- my css here to override bootstrap -->
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>About me</title>
+  </head>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about.html">About me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sources.html">Sources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolio.html">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+    <div
+      class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark"
+    >
+      <h1>About me</h1>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div
+        class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"
+      >
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div
+        class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
+      >
+        <div class="my-3 p-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div
+          class="bg-dark box-shadow mx-auto"
+          style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"
+        ></div>
+      </div>
+      <div
+        class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"
+      >
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+        <div
+          class="bg-light box-shadow mx-auto"
+          style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Trigger/Open The Modals -->
+    <button id="myBtn">Open Modal 1</button>
+
+    <!-- The Modals -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Modal Header</h2>
+          <button id="close1" class="close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the Modal Body</p>
+          <p>Some other text...</p>
+        </div>
+        <div class="modal-footer">
+          <button id="myBtn2">Open Modal 2</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Modal Header</h2>
+          <button id="close2" class="close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the Modal Body</p>
+          <p>Some other text...</p>
+        </div>
+        <div class="modal-footer">
+          <button id="myBtn3">Open Modal 3</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModal3" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Modal Header</h2>
+          <button id="close3" class="close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the Modal Body</p>
+          <p>Some other text...</p>
+        </div>
+        <div class="modal-footer">
+          <h1>This is the last modal</h1>
+        </div>
+      </div>
+    </div>
+
+    // #region [rgba(0, 205, 30, 0.1) ]
+    <!-- scripts here -->
+    <!-- modal1 JS -->
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      var modal2 = document.getElementById("myModal2");
+      var modal3 = document.getElementById("myModal3");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      var btn2 = document.getElementById("myBtn2");
+      var btn3 = document.getElementById("myBtn3");
+
+      // Get the <span> element that closes the modal
+      var close1 = document.getElementById("close1");
+      var close2 = document.getElementById("close2");
+      var close3 = document.getElementById("close3");
+
+      // When the user clicks on the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+      btn2.onclick = function () {
+        modal.style.display = "none";
+        modal2.style.display = "block";
+      };
+      btn3.onclick = function () {
+        modal2.style.display = "none";
+        modal3.style.display = "block";
+      };
+
+      // When the user clicks on (x), close the modal
+      close1.onclick = function () {
+        modal.style.display = "none";
+      };
+      close2.onclick = function () {
+        modal2.style.display = "none";
+      };
+      close3.onclick = function () {
+        modal3.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        } else if (event.target == modal2) {
+          modal2.style.display = "none";
+        } else if (event.target == modal3) {
+          modal3.style.display = "none";
+        }
+      };
+    </script>
+    <!-- bootstrap 4 scripts -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- icons -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+    // #endregion
+  </body>
+</html>

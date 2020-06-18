@@ -70,26 +70,26 @@ if ($answer3 == 3) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/index.php">Home</a>
+            <a class="nav-link" href="/hbo13_website/index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/html/about.html"
-              >About me</a
+            <a class="nav-link" href="/hbo13_website/html/marijuana.html"
+              >Marijuana</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/html/contact.html"
-              >Contact</a
+            <a class="nav-link" href="/hbo13_website/html/cocaine.html"
+              >Cocaine</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/hbo13_website/html/ecstasy.html"
+              >Ecstasy</a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/hbo13_website/html/sources.html"
               >Sources</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/html/portfolio.html"
-              >Portfolio</a
             >
           </li>
         </ul>
@@ -112,18 +112,22 @@ if ($answer3 == 3) {
       <!-- if user got 1 correct -->
       <?php if ($totalCorrect == 1) { ?>
         <h1>You only got 1 correct.</h1>
+        <p>Maybe you could try again?</p>
       <?php } ?>
 
         <!-- if user got 2 correct -->
       <?php if ($totalCorrect == 2) { ?>
         <h1>You got 2 correct!</h1>
+        <p>Not bad! Well done.</p>
       <?php } ?>
 
       <!-- if user got 3 correct -->
       <?php if ($totalCorrect == 3) { ?>
         <h1>You got 3 correct!</h1>
+        <p>Perfect! Well done!</p>
       <?php } ?>
               </div>
+              <div style="padding-bottom:25px;">
               <a
             class="btn btn-light"
             href="../html/marijuana.html"
@@ -132,7 +136,13 @@ if ($answer3 == 3) {
           >
             Return to marijuana page
           </a>
+              </div>
           </div>
       </div>
+            <!-- bootstrap 4 scripts -->
+            <script src="jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- icons -->
+      <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
 </html>

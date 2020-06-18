@@ -87,26 +87,26 @@ CloseCon($conn);
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/index.php">Home</a>
+            <a class="nav-link" href="/hbo13_website/index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/html/about.html"
-              >About me</a
+            <a class="nav-link" href="/hbo13_website/html/marijuana.html"
+              >Marijuana</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/html/contact.html"
-              >Contact</a
+            <a class="nav-link" href="/hbo13_website/html/cocaine.html"
+              >Cocaine</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/hbo13_website/html/ecstasy.html"
+              >Ecstasy</a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/hbo13_website/html/sources.html"
               >Sources</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/hbo13_website/html/portfolio.html"
-              >Portfolio</a
             >
           </li>
         </ul>
@@ -217,12 +217,19 @@ CloseCon($conn);
             </label>
         <?php } ?>
     </div>
-    <!-- <input class= "btn-light" type="submit" value="Submit answers"> -->
+    
+    <div style="padding-bottom: 25px;">
     <button type="submit" class="btn btn-light">Submit your answers</button>
+    </div>
     </form>
               </div>
           </div>
       </div>
+            <!-- bootstrap 4 scripts -->
+            <script src="jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- icons -->
+      <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
 
 </html>

@@ -102,6 +102,11 @@ nav a:hover::before {
   text-align: left;
 }
 
+.pLargeCenter {
+  font-size: x-large;
+  text-align: center;
+}
+
 .ulLeftLarge {
   font-size: large;
   text-align: left;
